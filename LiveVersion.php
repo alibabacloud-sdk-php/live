@@ -9,9 +9,9 @@ use AlibabaCloud\VersionResolverTrait;
  *
  * @package   AlibabaCloud\Live
  *
- * @method V20161101\LiveApiResolver v20161101()
+ * @method static V20161101\LiveApiResolver v20161101()
  */
-class Live
+class LiveVersion
 {
     use VersionResolverTrait;
 }
