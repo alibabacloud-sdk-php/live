@@ -2,7 +2,178 @@
 
 namespace AlibabaCloud\Live\V20161101;
 
+use AlibabaCloud\ApiResolverTrait;
 use AlibabaCloud\Rpc;
+
+/**
+ * Resolve Api based on the method name.
+ *
+ * @method SetBoardCallback setBoardCallback(array $options = [])
+ * @method UpdateBoardCallback updateBoardCallback(array $options = [])
+ * @method DescribeLiveDomainMapping describeLiveDomainMapping(array $options = [])
+ * @method CompleteBoardRecord completeBoardRecord(array $options = [])
+ * @method DescribeRecords describeRecords(array $options = [])
+ * @method DescribeRecord describeRecord(array $options = [])
+ * @method StartBoardRecord startBoardRecord(array $options = [])
+ * @method ApplyRecordToken applyRecordToken(array $options = [])
+ * @method RealTimeSnapshotCommand realTimeSnapshotCommand(array $options = [])
+ * @method StopLiveIndex stopLiveIndex(array $options = [])
+ * @method DescribeLiveDomainRealTimeTrafficData describeLiveDomainRealTimeTrafficData(array $options = [])
+ * @method DescribeLiveTopDomainsByFlow describeLiveTopDomainsByFlow(array $options = [])
+ * @method DescribeLiveDomainRealTimeBpsData describeLiveDomainRealTimeBpsData(array $options = [])
+ * @method DescribeLiveDomainSrcHttpCodeData describeLiveDomainSrcHttpCodeData(array $options = [])
+ * @method DescribeLiveDomainRealTimeHttpCodeData describeLiveDomainRealTimeHttpCodeData(array $options = [])
+ * @method DescribeLiveDomainHttpsData describeLiveDomainHttpsData(array $options = [])
+ * @method DeleteLiveLazyPullStreamInfoConfig deleteLiveLazyPullStreamInfoConfig(array $options = [])
+ * @method SetLiveLazyPullStreamInfoConfig setLiveLazyPullStreamInfoConfig(array $options = [])
+ * @method DescribeLiveLazyPullStreamConfig describeLiveLazyPullStreamConfig(array $options = [])
+ * @method UpdateBoard updateBoard(array $options = [])
+ * @method JoinBoard joinBoard(array $options = [])
+ * @method DescribeBoardSnapshot describeBoardSnapshot(array $options = [])
+ * @method DescribeBoards describeBoards(array $options = [])
+ * @method DescribeBoardEvents describeBoardEvents(array $options = [])
+ * @method DeleteBoard deleteBoard(array $options = [])
+ * @method CreateBoard createBoard(array $options = [])
+ * @method CompleteBoard completeBoard(array $options = [])
+ * @method ApplyBoardToken applyBoardToken(array $options = [])
+ * @method UpdateCasterSceneAudio updateCasterSceneAudio(array $options = [])
+ * @method DescribeCasterSceneAudio describeCasterSceneAudio(array $options = [])
+ * @method DescribeLiveStreamCount describeLiveStreamCount(array $options = [])
+ * @method DescribeHlsLiveStreamRealTimeBpsData describeHlsLiveStreamRealTimeBpsData(array $options = [])
+ * @method SetCasterChannel setCasterChannel(array $options = [])
+ * @method DescribeCasterChannels describeCasterChannels(array $options = [])
+ * @method BatchDeleteLiveDomainConfigs batchDeleteLiveDomainConfigs(array $options = [])
+ * @method DescribeRoomStatus describeRoomStatus(array $options = [])
+ * @method DescribeRoomKickoutUserList describeRoomKickoutUserList(array $options = [])
+ * @method SendRoomUserNotification sendRoomUserNotification(array $options = [])
+ * @method DescribeForbidPushStreamRoomList describeForbidPushStreamRoomList(array $options = [])
+ * @method SendRoomNotification sendRoomNotification(array $options = [])
+ * @method DescribeRoomList describeRoomList(array $options = [])
+ * @method ForbidPushStream forbidPushStream(array $options = [])
+ * @method DeleteRoom deleteRoom(array $options = [])
+ * @method CreateRoom createRoom(array $options = [])
+ * @method AllowPushStream allowPushStream(array $options = [])
+ * @method DescribeCasterRtcInfo describeCasterRtcInfo(array $options = [])
+ * @method DescribeUpBpsPeakOfLine describeUpBpsPeakOfLine(array $options = [])
+ * @method DescribeUpPeakPublishStreamData describeUpPeakPublishStreamData(array $options = [])
+ * @method DescribeUpBpsPeakData describeUpBpsPeakData(array $options = [])
+ * @method DescribeLiveCertificateList describeLiveCertificateList(array $options = [])
+ * @method SetLiveDomainCertificate setLiveDomainCertificate(array $options = [])
+ * @method DescribeLiveCertificateDetail describeLiveCertificateDetail(array $options = [])
+ * @method AddLiveDomainMapping addLiveDomainMapping(array $options = [])
+ * @method DeleteLiveDomainMapping deleteLiveDomainMapping(array $options = [])
+ * @method DescribeLiveDomainConfigs describeLiveDomainConfigs(array $options = [])
+ * @method AddCasterEpisodeGroupContent addCasterEpisodeGroupContent(array $options = [])
+ * @method DeleteCasterEpisodeGroup deleteCasterEpisodeGroup(array $options = [])
+ * @method AddCasterEpisodeGroup addCasterEpisodeGroup(array $options = [])
+ * @method DescribeLiveDomainUvData describeLiveDomainUvData(array $options = [])
+ * @method DescribeLiveUserDomains describeLiveUserDomains(array $options = [])
+ * @method DescribeLiveDomainTranscodeData describeLiveDomainTranscodeData(array $options = [])
+ * @method RealTimeRecordCommand realTimeRecordCommand(array $options = [])
+ * @method StopLiveDomain stopLiveDomain(array $options = [])
+ * @method StartLiveDomain startLiveDomain(array $options = [])
+ * @method DescribeLiveDomainDetail describeLiveDomainDetail(array $options = [])
+ * @method DescribeUserLiveDomains describeUserLiveDomains(array $options = [])
+ * @method DeleteLiveDomain deleteLiveDomain(array $options = [])
+ * @method DescribeDomainConfigs describeDomainConfigs(array $options = [])
+ * @method AddLiveDomain addLiveDomain(array $options = [])
+ * @method BatchSetLiveDomainConfigs batchSetLiveDomainConfigs(array $options = [])
+ * @method DescribeLiveDomainTrancodeData describeLiveDomainTrancodeData(array $options = [])
+ * @method DescribeLiveDomainRecordData describeLiveDomainRecordData(array $options = [])
+ * @method DescribeLiveDomainSnapshotData describeLiveDomainSnapshotData(array $options = [])
+ * @method DescribeCasterProgram describeCasterProgram(array $options = [])
+ * @method ModifyCasterProgram modifyCasterProgram(array $options = [])
+ * @method AddCasterProgram addCasterProgram(array $options = [])
+ * @method ModifyCasterEpisode modifyCasterEpisode(array $options = [])
+ * @method DeleteCasterProgram deleteCasterProgram(array $options = [])
+ * @method DeleteCasterEpisode deleteCasterEpisode(array $options = [])
+ * @method AddCasterEpisode addCasterEpisode(array $options = [])
+ * @method DescribeLiveDomainTrafficData describeLiveDomainTrafficData(array $options = [])
+ * @method DescribeLiveDomainBpsData describeLiveDomainBpsData(array $options = [])
+ * @method AddTrancodeSEI addTrancodeSEI(array $options = [])
+ * @method DeleteCasterSceneConfig deleteCasterSceneConfig(array $options = [])
+ * @method AddCustomLiveStreamTranscode addCustomLiveStreamTranscode(array $options = [])
+ * @method DeleteLiveRecordVodConfig deleteLiveRecordVodConfig(array $options = [])
+ * @method DescribeLiveRecordVodConfigs describeLiveRecordVodConfigs(array $options = [])
+ * @method AddLiveRecordVodConfig addLiveRecordVodConfig(array $options = [])
+ * @method DescribeCasterComponents describeCasterComponents(array $options = [])
+ * @method ModifyCasterComponent modifyCasterComponent(array $options = [])
+ * @method DeleteCasterComponent deleteCasterComponent(array $options = [])
+ * @method AddCasterComponent addCasterComponent(array $options = [])
+ * @method StopCaster stopCaster(array $options = [])
+ * @method StartCaster startCaster(array $options = [])
+ * @method DescribeLiveStreamHistoryUserNum describeLiveStreamHistoryUserNum(array $options = [])
+ * @method DescribeLiveTranscodeInfo describeLiveTranscodeInfo(array $options = [])
+ * @method UpdateCasterSceneConfig updateCasterSceneConfig(array $options = [])
+ * @method SetCasterConfig setCasterConfig(array $options = [])
+ * @method SetCasterSceneConfig setCasterSceneConfig(array $options = [])
+ * @method StartCasterScene startCasterScene(array $options = [])
+ * @method StopCasterScene stopCasterScene(array $options = [])
+ * @method EffectCasterUrgent effectCasterUrgent(array $options = [])
+ * @method EffectCasterVideoResource effectCasterVideoResource(array $options = [])
+ * @method ModifyCasterLayout modifyCasterLayout(array $options = [])
+ * @method ModifyCasterVideoResource modifyCasterVideoResource(array $options = [])
+ * @method DescribeCasters describeCasters(array $options = [])
+ * @method DescribeCasterScenes describeCasterScenes(array $options = [])
+ * @method DescribeCasterStreamUrl describeCasterStreamUrl(array $options = [])
+ * @method DescribeCasterVideoResources describeCasterVideoResources(array $options = [])
+ * @method DeleteCasterVideoResource deleteCasterVideoResource(array $options = [])
+ * @method DescribeCasterConfig describeCasterConfig(array $options = [])
+ * @method DescribeCasterLayouts describeCasterLayouts(array $options = [])
+ * @method DeleteCaster deleteCaster(array $options = [])
+ * @method DeleteCasterLayout deleteCasterLayout(array $options = [])
+ * @method CopyCasterSceneConfig copyCasterSceneConfig(array $options = [])
+ * @method CreateCaster createCaster(array $options = [])
+ * @method AddCasterLayout addCasterLayout(array $options = [])
+ * @method AddCasterVideoResource addCasterVideoResource(array $options = [])
+ * @method CopyCaster copyCaster(array $options = [])
+ * @method AddLivePullStreamInfoConfig addLivePullStreamInfoConfig(array $options = [])
+ * @method DeleteLivePullStreamInfoConfig deleteLivePullStreamInfoConfig(array $options = [])
+ * @method DescribeLivePullStreamConfig describeLivePullStreamConfig(array $options = [])
+ * @method DescribeLiveStreamBitRateData describeLiveStreamBitRateData(array $options = [])
+ * @method UpdateLiveSnapshotDetectPornConfig updateLiveSnapshotDetectPornConfig(array $options = [])
+ * @method UpdateLiveDetectNotifyConfig updateLiveDetectNotifyConfig(array $options = [])
+ * @method DescribeLiveSnapshotDetectPornConfig describeLiveSnapshotDetectPornConfig(array $options = [])
+ * @method DeleteLiveSnapshotDetectPornConfig deleteLiveSnapshotDetectPornConfig(array $options = [])
+ * @method DescribeLiveDetectNotifyConfig describeLiveDetectNotifyConfig(array $options = [])
+ * @method DeleteLiveDetectNotifyConfig deleteLiveDetectNotifyConfig(array $options = [])
+ * @method AddLiveSnapshotDetectPornConfig addLiveSnapshotDetectPornConfig(array $options = [])
+ * @method AddLiveDetectNotifyConfig addLiveDetectNotifyConfig(array $options = [])
+ * @method UpdateLiveRecordNotifyConfig updateLiveRecordNotifyConfig(array $options = [])
+ * @method DescribeLiveStreamsNotifyUrlConfig describeLiveStreamsNotifyUrlConfig(array $options = [])
+ * @method DescribeLiveRecordNotifyConfig describeLiveRecordNotifyConfig(array $options = [])
+ * @method DeleteLiveRecordNotifyConfig deleteLiveRecordNotifyConfig(array $options = [])
+ * @method DeleteLiveStreamsNotifyUrlConfig deleteLiveStreamsNotifyUrlConfig(array $options = [])
+ * @method AddLiveRecordNotifyConfig addLiveRecordNotifyConfig(array $options = [])
+ * @method ResumeLiveStream resumeLiveStream(array $options = [])
+ * @method SetLiveStreamsNotifyUrlConfig setLiveStreamsNotifyUrlConfig(array $options = [])
+ * @method DescribeLiveStreamTranscodeInfo describeLiveStreamTranscodeInfo(array $options = [])
+ * @method ForbidLiveStream forbidLiveStream(array $options = [])
+ * @method DescribeLiveStreamsFrameRateAndBitRateData describeLiveStreamsFrameRateAndBitRateData(array $options = [])
+ * @method DeleteLiveStreamTranscode deleteLiveStreamTranscode(array $options = [])
+ * @method AddLiveStreamTranscode addLiveStreamTranscode(array $options = [])
+ * @method DescribeLiveStreamsControlHistory describeLiveStreamsControlHistory(array $options = [])
+ * @method DescribeLiveStreamsOnlineList describeLiveStreamsOnlineList(array $options = [])
+ * @method DescribeLiveStreamsPublishList describeLiveStreamsPublishList(array $options = [])
+ * @method DescribeLiveStreamOnlineUserNum describeLiveStreamOnlineUserNum(array $options = [])
+ * @method DescribeLiveStreamsBlockList describeLiveStreamsBlockList(array $options = [])
+ * @method UpdateLiveAppSnapshotConfig updateLiveAppSnapshotConfig(array $options = [])
+ * @method DescribeLiveSnapshotConfig describeLiveSnapshotConfig(array $options = [])
+ * @method DescribeLiveStreamRecordContent describeLiveStreamRecordContent(array $options = [])
+ * @method DescribeLiveStreamRecordIndexFile describeLiveStreamRecordIndexFile(array $options = [])
+ * @method DescribeLiveStreamRecordIndexFiles describeLiveStreamRecordIndexFiles(array $options = [])
+ * @method DescribeLiveStreamSnapshotInfo describeLiveStreamSnapshotInfo(array $options = [])
+ * @method CreateLiveStreamRecordIndexFiles createLiveStreamRecordIndexFiles(array $options = [])
+ * @method DeleteLiveAppRecordConfig deleteLiveAppRecordConfig(array $options = [])
+ * @method DeleteLiveAppSnapshotConfig deleteLiveAppSnapshotConfig(array $options = [])
+ * @method DescribeLiveRecordConfig describeLiveRecordConfig(array $options = [])
+ * @method AddLiveAppRecordConfig addLiveAppRecordConfig(array $options = [])
+ * @method AddLiveAppSnapshotConfig addLiveAppSnapshotConfig(array $options = [])
+ */
+class LiveApiResolver
+{
+    use ApiResolverTrait;
+}
 
 class V20161101Rpc extends Rpc
 {
@@ -17,52 +188,6 @@ class V20161101Rpc extends Rpc
 
     /** @var string */
     public $serviceCode = 'live';
-}
-
-/**
- * @method string getSubscriberName()
- * @method $this withSubscriberName($value)
- * @method string getOwnerId()
- * @method $this withOwnerId($value)
- */
-class UnSubscribeStream extends V20161101Rpc
-{
-}
-
-/**
- * @method string getSubscriberName()
- * @method $this withSubscriberName($value)
- * @method string getOwnerId()
- * @method $this withOwnerId($value)
- * @method string getUserData()
- * @method $this withUserData($value)
- */
-class SubscribeStream extends V20161101Rpc
-{
-}
-
-/**
- * @method string getSubscriberName()
- * @method $this withSubscriberName($value)
- * @method string getPageNum()
- * @method $this withPageNum($value)
- * @method string getPageSize()
- * @method $this withPageSize($value)
- * @method string getOwnerId()
- * @method $this withOwnerId($value)
- */
-class DescirbeSubscribeList extends V20161101Rpc
-{
-}
-
-/**
- * @method string getSubscriberName()
- * @method $this withSubscriberName($value)
- * @method string getOwnerId()
- * @method $this withOwnerId($value)
- */
-class CreateSubscriber extends V20161101Rpc
-{
 }
 
 /**
@@ -501,31 +626,31 @@ class UpdateCasterSceneAudio extends V20161101Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $audioLayer
      *
      * @return $this
      */
-    public function withAudioLayer(array $value)
+    public function withAudioLayer(array $audioLayer)
     {
-        $this->data['AudioLayer'] = $value;
-        foreach ($value as $i => $iValue) {
-            $this->options['query']['AudioLayer.' . ($i + 1) . '.FixedDelayDuration'] = $value[$i]['FixedDelayDuration'];
-            $this->options['query']['AudioLayer.' . ($i + 1) . '.VolumeRate'] = $value[$i]['VolumeRate'];
-            $this->options['query']['AudioLayer.' . ($i + 1) . '.ValidChannel'] = $value[$i]['ValidChannel'];
+        $this->data['AudioLayer'] = $audioLayer;
+        foreach ($audioLayer as $depth1 => $depth1Value) {
+            $this->options['query']['AudioLayer.' . ($depth1 + 1) . '.FixedDelayDuration'] = $depth1Value['FixedDelayDuration'];
+            $this->options['query']['AudioLayer.' . ($depth1 + 1) . '.VolumeRate'] = $depth1Value['VolumeRate'];
+            $this->options['query']['AudioLayer.' . ($depth1 + 1) . '.ValidChannel'] = $depth1Value['ValidChannel'];
         }
 
         return $this;
     }
 
     /**
-     * @param array $value
+     * @param array $mixList
      *
      * @return $this
      */
-    public function withMixList(array $value)
+    public function withMixList(array $mixList)
     {
-        $this->data['MixList'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->data['MixList'] = $mixList;
+        foreach ($mixList as $i => $iValue) {
             $this->options['query']['MixList.' . ($i + 1)] = $iValue;
         }
 
@@ -972,16 +1097,16 @@ class AddCasterEpisodeGroup extends V20161101Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $item
      *
      * @return $this
      */
-    public function withItem(array $value)
+    public function withItem(array $item)
     {
-        $this->data['Item'] = $value;
-        foreach ($value as $i => $iValue) {
-            $this->options['query']['Item.' . ($i + 1) . '.VodUrl'] = $value[$i]['VodUrl'];
-            $this->options['query']['Item.' . ($i + 1) . '.ItemName'] = $value[$i]['ItemName'];
+        $this->data['Item'] = $item;
+        foreach ($item as $depth1 => $depth1Value) {
+            $this->options['query']['Item.' . ($depth1 + 1) . '.VodUrl'] = $depth1Value['VodUrl'];
+            $this->options['query']['Item.' . ($depth1 + 1) . '.ItemName'] = $depth1Value['ItemName'];
         }
 
         return $this;
@@ -1271,24 +1396,24 @@ class ModifyCasterProgram extends V20161101Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $episode
      *
      * @return $this
      */
-    public function withEpisode(array $value)
+    public function withEpisode(array $episode)
     {
-        $this->data['Episode'] = $value;
-        foreach ($value as $i => $iValue) {
-            $this->options['query']['Episode.' . ($i + 1) . '.ResourceId'] = $value[$i]['ResourceId'];
-            foreach ($value[$i]['ComponentIds'] as $j => $jValue) {
-                $this->options['query']['Episode.' . ($i + 1) . '.ComponentId.' . ($j + 1)] = $jValue;
+        $this->data['Episode'] = $episode;
+        foreach ($episode as $depth1 => $depth1Value) {
+            $this->options['query']['Episode.' . ($depth1 + 1) . '.ResourceId'] = $depth1Value['ResourceId'];
+            foreach ($depth1Value['ComponentId'] as $i => $iValue) {
+                $this->options['query']['Episode.' . ($depth1 + 1) . '.ComponentId.' . ($i + 1)] = $iValue;
             }
-            $this->options['query']['Episode.' . ($i + 1) . '.SwitchType'] = $value[$i]['SwitchType'];
-            $this->options['query']['Episode.' . ($i + 1) . '.EpisodeType'] = $value[$i]['EpisodeType'];
-            $this->options['query']['Episode.' . ($i + 1) . '.EpisodeName'] = $value[$i]['EpisodeName'];
-            $this->options['query']['Episode.' . ($i + 1) . '.EndTime'] = $value[$i]['EndTime'];
-            $this->options['query']['Episode.' . ($i + 1) . '.StartTime'] = $value[$i]['StartTime'];
-            $this->options['query']['Episode.' . ($i + 1) . '.EpisodeId'] = $value[$i]['EpisodeId'];
+            $this->options['query']['Episode.' . ($depth1 + 1) . '.SwitchType'] = $depth1Value['SwitchType'];
+            $this->options['query']['Episode.' . ($depth1 + 1) . '.EpisodeType'] = $depth1Value['EpisodeType'];
+            $this->options['query']['Episode.' . ($depth1 + 1) . '.EpisodeName'] = $depth1Value['EpisodeName'];
+            $this->options['query']['Episode.' . ($depth1 + 1) . '.EndTime'] = $depth1Value['EndTime'];
+            $this->options['query']['Episode.' . ($depth1 + 1) . '.StartTime'] = $depth1Value['StartTime'];
+            $this->options['query']['Episode.' . ($depth1 + 1) . '.EpisodeId'] = $depth1Value['EpisodeId'];
         }
 
         return $this;
@@ -1306,23 +1431,23 @@ class AddCasterProgram extends V20161101Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $episode
      *
      * @return $this
      */
-    public function withEpisode(array $value)
+    public function withEpisode(array $episode)
     {
-        $this->data['Episode'] = $value;
-        foreach ($value as $i => $iValue) {
-            $this->options['query']['Episode.' . ($i + 1) . '.ResourceId'] = $value[$i]['ResourceId'];
-            foreach ($value[$i]['ComponentIds'] as $j => $jValue) {
-                $this->options['query']['Episode.' . ($i + 1) . '.ComponentId.' . ($j + 1)] = $jValue;
+        $this->data['Episode'] = $episode;
+        foreach ($episode as $depth1 => $depth1Value) {
+            $this->options['query']['Episode.' . ($depth1 + 1) . '.ResourceId'] = $depth1Value['ResourceId'];
+            foreach ($depth1Value['ComponentId'] as $i => $iValue) {
+                $this->options['query']['Episode.' . ($depth1 + 1) . '.ComponentId.' . ($i + 1)] = $iValue;
             }
-            $this->options['query']['Episode.' . ($i + 1) . '.SwitchType'] = $value[$i]['SwitchType'];
-            $this->options['query']['Episode.' . ($i + 1) . '.EpisodeType'] = $value[$i]['EpisodeType'];
-            $this->options['query']['Episode.' . ($i + 1) . '.EpisodeName'] = $value[$i]['EpisodeName'];
-            $this->options['query']['Episode.' . ($i + 1) . '.EndTime'] = $value[$i]['EndTime'];
-            $this->options['query']['Episode.' . ($i + 1) . '.StartTime'] = $value[$i]['StartTime'];
+            $this->options['query']['Episode.' . ($depth1 + 1) . '.SwitchType'] = $depth1Value['SwitchType'];
+            $this->options['query']['Episode.' . ($depth1 + 1) . '.EpisodeType'] = $depth1Value['EpisodeType'];
+            $this->options['query']['Episode.' . ($depth1 + 1) . '.EpisodeName'] = $depth1Value['EpisodeName'];
+            $this->options['query']['Episode.' . ($depth1 + 1) . '.EndTime'] = $depth1Value['EndTime'];
+            $this->options['query']['Episode.' . ($depth1 + 1) . '.StartTime'] = $depth1Value['StartTime'];
         }
 
         return $this;
@@ -1352,14 +1477,14 @@ class ModifyCasterEpisode extends V20161101Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $componentId
      *
      * @return $this
      */
-    public function withComponentId(array $value)
+    public function withComponentId(array $componentId)
     {
-        $this->data['ComponentId'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->data['ComponentId'] = $componentId;
+        foreach ($componentId as $i => $iValue) {
             $this->options['query']['ComponentId.' . ($i + 1)] = $iValue;
         }
 
@@ -1412,14 +1537,14 @@ class AddCasterEpisode extends V20161101Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $componentId
      *
      * @return $this
      */
-    public function withComponentId(array $value)
+    public function withComponentId(array $componentId)
     {
-        $this->data['ComponentId'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->data['ComponentId'] = $componentId;
+        foreach ($componentId as $i => $iValue) {
             $this->options['query']['ComponentId.' . ($i + 1)] = $iValue;
         }
 
@@ -1734,14 +1859,14 @@ class UpdateCasterSceneConfig extends V20161101Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $componentId
      *
      * @return $this
      */
-    public function withComponentId(array $value)
+    public function withComponentId(array $componentId)
     {
-        $this->data['ComponentId'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->data['ComponentId'] = $componentId;
+        foreach ($componentId as $i => $iValue) {
             $this->options['query']['ComponentId.' . ($i + 1)] = $iValue;
         }
 
@@ -1796,14 +1921,14 @@ class SetCasterSceneConfig extends V20161101Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $componentId
      *
      * @return $this
      */
-    public function withComponentId(array $value)
+    public function withComponentId(array $componentId)
     {
-        $this->data['ComponentId'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->data['ComponentId'] = $componentId;
+        foreach ($componentId as $i => $iValue) {
             $this->options['query']['ComponentId.' . ($i + 1)] = $iValue;
         }
 
@@ -1877,14 +2002,14 @@ class ModifyCasterLayout extends V20161101Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $blendList
      *
      * @return $this
      */
-    public function withBlendList(array $value)
+    public function withBlendList(array $blendList)
     {
-        $this->data['BlendList'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->data['BlendList'] = $blendList;
+        foreach ($blendList as $i => $iValue) {
             $this->options['query']['BlendList.' . ($i + 1)] = $iValue;
         }
 
@@ -1892,53 +2017,53 @@ class ModifyCasterLayout extends V20161101Rpc
     }
 
     /**
-     * @param array $value
+     * @param array $audioLayer
      *
      * @return $this
      */
-    public function withAudioLayer(array $value)
+    public function withAudioLayer(array $audioLayer)
     {
-        $this->data['AudioLayer'] = $value;
-        foreach ($value as $i => $iValue) {
-            $this->options['query']['AudioLayer.' . ($i + 1) . '.FixedDelayDuration'] = $value[$i]['FixedDelayDuration'];
-            $this->options['query']['AudioLayer.' . ($i + 1) . '.VolumeRate'] = $value[$i]['VolumeRate'];
-            $this->options['query']['AudioLayer.' . ($i + 1) . '.ValidChannel'] = $value[$i]['ValidChannel'];
+        $this->data['AudioLayer'] = $audioLayer;
+        foreach ($audioLayer as $depth1 => $depth1Value) {
+            $this->options['query']['AudioLayer.' . ($depth1 + 1) . '.FixedDelayDuration'] = $depth1Value['FixedDelayDuration'];
+            $this->options['query']['AudioLayer.' . ($depth1 + 1) . '.VolumeRate'] = $depth1Value['VolumeRate'];
+            $this->options['query']['AudioLayer.' . ($depth1 + 1) . '.ValidChannel'] = $depth1Value['ValidChannel'];
         }
 
         return $this;
     }
 
     /**
-     * @param array $value
+     * @param array $videoLayer
      *
      * @return $this
      */
-    public function withVideoLayer(array $value)
+    public function withVideoLayer(array $videoLayer)
     {
-        $this->data['VideoLayer'] = $value;
-        foreach ($value as $i => $iValue) {
-            $this->options['query']['VideoLayer.' . ($i + 1) . '.FillMode'] = $value[$i]['FillMode'];
-            $this->options['query']['VideoLayer.' . ($i + 1) . '.WidthNormalized'] = $value[$i]['WidthNormalized'];
-            $this->options['query']['VideoLayer.' . ($i + 1) . '.FixedDelayDuration'] = $value[$i]['FixedDelayDuration'];
-            $this->options['query']['VideoLayer.' . ($i + 1) . '.PositionRefer'] = $value[$i]['PositionRefer'];
-            foreach ($value[$i]['PositionNormalizeds'] as $j => $jValue) {
-                $this->options['query']['VideoLayer.' . ($i + 1) . '.PositionNormalized.' . ($j + 1)] = $jValue;
+        $this->data['VideoLayer'] = $videoLayer;
+        foreach ($videoLayer as $depth1 => $depth1Value) {
+            $this->options['query']['VideoLayer.' . ($depth1 + 1) . '.FillMode'] = $depth1Value['FillMode'];
+            $this->options['query']['VideoLayer.' . ($depth1 + 1) . '.WidthNormalized'] = $depth1Value['WidthNormalized'];
+            $this->options['query']['VideoLayer.' . ($depth1 + 1) . '.FixedDelayDuration'] = $depth1Value['FixedDelayDuration'];
+            $this->options['query']['VideoLayer.' . ($depth1 + 1) . '.PositionRefer'] = $depth1Value['PositionRefer'];
+            foreach ($depth1Value['PositionNormalized'] as $i => $iValue) {
+                $this->options['query']['VideoLayer.' . ($depth1 + 1) . '.PositionNormalized.' . ($i + 1)] = $iValue;
             }
-            $this->options['query']['VideoLayer.' . ($i + 1) . '.HeightNormalized'] = $value[$i]['HeightNormalized'];
+            $this->options['query']['VideoLayer.' . ($depth1 + 1) . '.HeightNormalized'] = $depth1Value['HeightNormalized'];
         }
 
         return $this;
     }
 
     /**
-     * @param array $value
+     * @param array $mixList
      *
      * @return $this
      */
-    public function withMixList(array $value)
+    public function withMixList(array $mixList)
     {
-        $this->data['MixList'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->data['MixList'] = $mixList;
+        foreach ($mixList as $i => $iValue) {
             $this->options['query']['MixList.' . ($i + 1)] = $iValue;
         }
 
@@ -2136,14 +2261,14 @@ class AddCasterLayout extends V20161101Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $blendList
      *
      * @return $this
      */
-    public function withBlendList(array $value)
+    public function withBlendList(array $blendList)
     {
-        $this->data['BlendList'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->data['BlendList'] = $blendList;
+        foreach ($blendList as $i => $iValue) {
             $this->options['query']['BlendList.' . ($i + 1)] = $iValue;
         }
 
@@ -2151,53 +2276,53 @@ class AddCasterLayout extends V20161101Rpc
     }
 
     /**
-     * @param array $value
+     * @param array $audioLayer
      *
      * @return $this
      */
-    public function withAudioLayer(array $value)
+    public function withAudioLayer(array $audioLayer)
     {
-        $this->data['AudioLayer'] = $value;
-        foreach ($value as $i => $iValue) {
-            $this->options['query']['AudioLayer.' . ($i + 1) . '.FixedDelayDuration'] = $value[$i]['FixedDelayDuration'];
-            $this->options['query']['AudioLayer.' . ($i + 1) . '.VolumeRate'] = $value[$i]['VolumeRate'];
-            $this->options['query']['AudioLayer.' . ($i + 1) . '.ValidChannel'] = $value[$i]['ValidChannel'];
+        $this->data['AudioLayer'] = $audioLayer;
+        foreach ($audioLayer as $depth1 => $depth1Value) {
+            $this->options['query']['AudioLayer.' . ($depth1 + 1) . '.FixedDelayDuration'] = $depth1Value['FixedDelayDuration'];
+            $this->options['query']['AudioLayer.' . ($depth1 + 1) . '.VolumeRate'] = $depth1Value['VolumeRate'];
+            $this->options['query']['AudioLayer.' . ($depth1 + 1) . '.ValidChannel'] = $depth1Value['ValidChannel'];
         }
 
         return $this;
     }
 
     /**
-     * @param array $value
+     * @param array $videoLayer
      *
      * @return $this
      */
-    public function withVideoLayer(array $value)
+    public function withVideoLayer(array $videoLayer)
     {
-        $this->data['VideoLayer'] = $value;
-        foreach ($value as $i => $iValue) {
-            $this->options['query']['VideoLayer.' . ($i + 1) . '.FillMode'] = $value[$i]['FillMode'];
-            $this->options['query']['VideoLayer.' . ($i + 1) . '.WidthNormalized'] = $value[$i]['WidthNormalized'];
-            $this->options['query']['VideoLayer.' . ($i + 1) . '.FixedDelayDuration'] = $value[$i]['FixedDelayDuration'];
-            $this->options['query']['VideoLayer.' . ($i + 1) . '.PositionRefer'] = $value[$i]['PositionRefer'];
-            foreach ($value[$i]['PositionNormalizeds'] as $j => $jValue) {
-                $this->options['query']['VideoLayer.' . ($i + 1) . '.PositionNormalized.' . ($j + 1)] = $jValue;
+        $this->data['VideoLayer'] = $videoLayer;
+        foreach ($videoLayer as $depth1 => $depth1Value) {
+            $this->options['query']['VideoLayer.' . ($depth1 + 1) . '.FillMode'] = $depth1Value['FillMode'];
+            $this->options['query']['VideoLayer.' . ($depth1 + 1) . '.WidthNormalized'] = $depth1Value['WidthNormalized'];
+            $this->options['query']['VideoLayer.' . ($depth1 + 1) . '.FixedDelayDuration'] = $depth1Value['FixedDelayDuration'];
+            $this->options['query']['VideoLayer.' . ($depth1 + 1) . '.PositionRefer'] = $depth1Value['PositionRefer'];
+            foreach ($depth1Value['PositionNormalized'] as $i => $iValue) {
+                $this->options['query']['VideoLayer.' . ($depth1 + 1) . '.PositionNormalized.' . ($i + 1)] = $iValue;
             }
-            $this->options['query']['VideoLayer.' . ($i + 1) . '.HeightNormalized'] = $value[$i]['HeightNormalized'];
+            $this->options['query']['VideoLayer.' . ($depth1 + 1) . '.HeightNormalized'] = $depth1Value['HeightNormalized'];
         }
 
         return $this;
     }
 
     /**
-     * @param array $value
+     * @param array $mixList
      *
      * @return $this
      */
-    public function withMixList(array $value)
+    public function withMixList(array $mixList)
     {
-        $this->data['MixList'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->data['MixList'] = $mixList;
+        foreach ($mixList as $i => $iValue) {
             $this->options['query']['MixList.' . ($i + 1)] = $iValue;
         }
 
@@ -2340,14 +2465,14 @@ class UpdateLiveSnapshotDetectPornConfig extends V20161101Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $scene
      *
      * @return $this
      */
-    public function withScene(array $value)
+    public function withScene(array $scene)
     {
-        $this->data['Scene'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->data['Scene'] = $scene;
+        foreach ($scene as $i => $iValue) {
             $this->options['query']['Scene.' . ($i + 1)] = $iValue;
         }
 
@@ -2450,14 +2575,14 @@ class AddLiveSnapshotDetectPornConfig extends V20161101Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $scene
      *
      * @return $this
      */
-    public function withScene(array $value)
+    public function withScene(array $scene)
     {
-        $this->data['Scene'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->data['Scene'] = $scene;
+        foreach ($scene as $i => $iValue) {
             $this->options['query']['Scene.' . ($i + 1)] = $iValue;
         }
 
@@ -3026,18 +3151,18 @@ class AddLiveAppRecordConfig extends V20161101Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $recordFormat
      *
      * @return $this
      */
-    public function withRecordFormat(array $value)
+    public function withRecordFormat(array $recordFormat)
     {
-        $this->data['RecordFormat'] = $value;
-        foreach ($value as $i => $iValue) {
-            $this->options['query']['RecordFormat.' . ($i + 1) . '.SliceOssObjectPrefix'] = $value[$i]['SliceOssObjectPrefix'];
-            $this->options['query']['RecordFormat.' . ($i + 1) . '.Format'] = $value[$i]['Format'];
-            $this->options['query']['RecordFormat.' . ($i + 1) . '.OssObjectPrefix'] = $value[$i]['OssObjectPrefix'];
-            $this->options['query']['RecordFormat.' . ($i + 1) . '.CycleDuration'] = $value[$i]['CycleDuration'];
+        $this->data['RecordFormat'] = $recordFormat;
+        foreach ($recordFormat as $depth1 => $depth1Value) {
+            $this->options['query']['RecordFormat.' . ($depth1 + 1) . '.SliceOssObjectPrefix'] = $depth1Value['SliceOssObjectPrefix'];
+            $this->options['query']['RecordFormat.' . ($depth1 + 1) . '.Format'] = $depth1Value['Format'];
+            $this->options['query']['RecordFormat.' . ($depth1 + 1) . '.OssObjectPrefix'] = $depth1Value['OssObjectPrefix'];
+            $this->options['query']['RecordFormat.' . ($depth1 + 1) . '.CycleDuration'] = $depth1Value['CycleDuration'];
         }
 
         return $this;
