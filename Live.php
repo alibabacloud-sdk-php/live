@@ -5,8 +5,8 @@ namespace AlibabaCloud\Live;
 use AlibabaCloud\Client\Resolver\VersionResolver;
 
 /**
- * @deprecated
+ * @method static V20161101\LiveApiResolver v20161101()
  */
-class LiveVersion extends VersionResolver
+class Live extends VersionResolver
 {
 }
